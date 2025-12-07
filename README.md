@@ -53,6 +53,9 @@
 使用Docker是运行酷监控最简单的方式：
 
 ```bash
+# 根据自动识别架构体系（小白首选）
+docker run -d --name coolmonitor --restart always -p 3333:3333 -v ~/coolmonitor_data:/app/data 13919178218/coolmonitor
+
 # 适用于x86/x64架构
 docker run -d --name coolmonitor --restart always -p 3333:3333 -v ~/coolmonitor_data:/app/data 13919178218/coolmonitor:amd64-latest
 
@@ -104,7 +107,7 @@ docker pull 13919178218/coolmonitor:ppc64le-latest
 docker pull 13919178218/coolmonitor:armv7-latest
 
 # 4. 重新运行容器
-docker run -d --name coolmonitor --restart always -p 3333:3333 -v ~/coolmonitor_data:/app/data star7th/coolmonitor:latest
+docker run -d --name coolmonitor --restart always -p 3333:3333 -v ~/coolmonitor_data:/app/data 13919178218/coolmonitor
 ```
 
 **注意事项：**
@@ -136,7 +139,7 @@ coolmonitor/
 
 欢迎贡献代码！请随时提交Pull Request。
 
-转载来自 star7th
+转载来自 star7th，如有类同纯属虚构！
 
 ## 📄 许可证
 
