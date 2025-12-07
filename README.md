@@ -54,12 +54,17 @@
 
 ```bash
 # 适用于x86/x64架构
-docker run -d --name coolmonitor --restart always -p 3333:3333 -v ~/coolmonitor_data:/app/data star7th/coolmonitor:latest
+docker run -d --name coolmonitor --restart always -p 3333:3333 -v ~/coolmonitor_data:/app/data 13919178218/coolmonitor:amd64-latest
 
 # 适用于ARM架构（如树莓派、Apple Silicon）
-docker run -d --name coolmonitor --restart always -p 3333:3333 -v ~/coolmonitor_data:/app/data star7th/coolmonitor:arm-latest
-```
+docker run -d --name coolmonitor --restart always -p 3333:3333 -v ~/coolmonitor_data:/app/data 13919178218/coolmonitor:arm-latest
 
+# 适用于linux/ppc64le架构
+docker run -d --name coolmonitor --restart always -p 3333:3333 -v ~/coolmonitor_data:/app/data 13919178218/coolmonitor:ppc64le-latest
+
+# 适用于linux/arm/v7架构
+docker run -d --name coolmonitor --restart always -p 3333:3333 -v ~/coolmonitor_data:/app/data 13919178218/coolmonitor:armv7-latest
+```
 
 ### 初始化说明
 
@@ -85,9 +90,18 @@ docker stop coolmonitor
 docker rm coolmonitor
 
 # 3. 拉取最新镜像
-docker pull star7th/coolmonitor:latest
-# 或者对于ARM架构
-docker pull star7th/coolmonitor:arm-latest
+
+# 适用于x86/x64架构
+docker pull 13919178218/coolmonitor:amd64-latest
+
+# 适用于ARM架构（如树莓派、Apple Silicon）
+docker pull 13919178218/coolmonitor:arm-latest
+
+# 适用于linux/ppc64le架构
+docker pull 13919178218/coolmonitor:ppc64le-latest
+
+# 适用于linux/arm/v7架构
+docker pull 13919178218/coolmonitor:armv7-latest
 
 # 4. 重新运行容器
 docker run -d --name coolmonitor --restart always -p 3333:3333 -v ~/coolmonitor_data:/app/data star7th/coolmonitor:latest
@@ -122,11 +136,7 @@ coolmonitor/
 
 欢迎贡献代码！请随时提交Pull Request。
 
-1. Fork仓库
-2. 创建功能分支 (`git checkout -b feature/amazing-feature`)
-3. 提交更改 (`git commit -m '添加某项惊人功能'`)
-4. 推送到分支 (`git push origin feature/amazing-feature`)
-5. 打开Pull Request
+转载来自 star7th
 
 ## 📄 许可证
 
@@ -134,4 +144,4 @@ coolmonitor/
 
 ## 🔗 链接
 
-* GitHub仓库: https://github.com/star7th/coolmonitor
+* GitHub仓库: https://github.com/13919178218/coolmonitor
